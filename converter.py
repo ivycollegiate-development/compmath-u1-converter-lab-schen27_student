@@ -28,8 +28,12 @@ def get_number(prompt):
     float() raises ValueError and the whole program crashes.
     FIX ME: wrap this in try/except so bad input asks again.
     """
-    raw = input(prompt)
-    return float(raw)
+    while True: 
+        raw = input(prompt) 
+        try:
+            return float(raw) 
+        except ValueError:
+            print("That's not a number, please try again.")
 
 
 def f_to_c(f):
@@ -39,7 +43,7 @@ def f_to_c(f):
     answer with no crash and no error.
     FIX ME: compare it with the code-along version from today's lesson.
     """
-    return f * 5 / 9
+    return (f - 32) * 5 / 9
 
 
 def c_to_f(c):
